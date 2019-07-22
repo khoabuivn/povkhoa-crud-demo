@@ -1,0 +1,9 @@
+extends ../layouts/common
+
+block content
+
+  h1 Create
+  form(action="/users/create" method='POST')
+    span name
+    input(type='text' name='name')
+    button Create
