@@ -2,7 +2,7 @@ extends ../layouts/common
 
 block content
 
-  a(href='/users/create') Create
+  a.btn.btn-primary(href='/users/create') Create
 
   h1 Users
 
@@ -11,9 +11,19 @@ block content
       input(type='text', name='q', value=value, class='form-control')
       button(class="btn btn-primary") Search
 
-  ul
-    each user, index in users
-      li
-        span= user.name
-        span &nbsp
-        a(href='/users/' + user.id) View
+  table.table
+    thead
+      tr
+        th(scope='col') Name
+        th(scope='col') Phone
+        th(scope='col') Actions
+    tbody
+      each user in users
+        tr
+          th(scope='row')= user.name
+          td= user.phone
+          td
+            a(href='/users/' + user.id) View
+
+
+

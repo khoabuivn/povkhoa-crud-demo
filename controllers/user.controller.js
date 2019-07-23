@@ -26,14 +26,31 @@ module.exports.create = function(req, res) {
 
 module.exports.getUser = function(req, res) {
   var id = req.params.id;
-  var user = db.get('users').find({ id: id}).value();
+  var user = db.get('users').find({ id: id }).value();
   res.render('users/view', { user: user })
 };
 
 module.exports.postCreate = function(req, res) {
   /*console.log(req.body);*/
+  var errors = [];
   req.body.id = shortid.generate();
+  if(!req.body.name)  {
+    errors.push('Name required');
+  }
+
+  if(!req.body.phone)  {
+    errors.push('Phone required')
+  }
+
+  if(errors.length) {
+    res.render('users/create', {
+      errors: errors,
+      value: req.body
+    });
+    return;
+  }
 
   db.get('users').push(req.body).write();
+  console.log(req.body);
   res.redirect('/users');
 };
