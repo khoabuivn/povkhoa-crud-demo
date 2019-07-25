@@ -8,22 +8,14 @@
     {
       "name": "Khoa",
       "phone": "0907327423",
-      "id": "1blnkEb1D"
+      "id": "1blnkEb1D",
+      "email": "khoabuivnhcm@gmail.com",
+      "password": "e10adc3949ba59abbe56e057f20f883e"
     },
     {
-      "name": "",
-      "phone": "",
-      "id": "lwV-b1R4k"
-    },
-    {
-      "name": "",
-      "phone": "",
-      "id": "bgwMSnz8o"
-    },
-    {
-      "name": "",
-      "phone": "",
-      "id": "OxRi7Y_ta"
+      "name": "David",
+      "phone": "323948234",
+      "id": "tygKSQAqF"
     }
   ]
 }
