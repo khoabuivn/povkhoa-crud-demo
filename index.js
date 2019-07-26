@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var userRoute = require('./routes/user.route');
@@ -6,6 +8,8 @@ var app = express();
 var port = 3000;
 var cookieParser = require('cookie-parser');
 var authMiddleware = require('./middlewares/auth.middleware');
+
+console.log(process.env.SESSION_SECRET); //Show process environment info or env variable
 
 app.set('view engine', 'pug');
 app.set('views', './views');
@@ -17,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
-app.use(cookieParser());
+app.use(cookieParser('love1st'));
 
 app.get('/', function (req, res) {
   res.render('index', { title: 'Hey', message: 'Hello there!' });

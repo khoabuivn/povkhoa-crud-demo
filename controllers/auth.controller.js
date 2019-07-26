@@ -6,7 +6,7 @@ module.exports.login = function(req, res) {
   res.render('auth/login');
 }
 
-module.exports.postLogin = function(req, res, next) {
+module.exports.postLogin = function(req, res) {
   var email= req.body.email;
   var password = req.body.password;
 
@@ -33,7 +33,9 @@ module.exports.postLogin = function(req, res, next) {
     return;
   }
 
-  res.cookie('userId', user.id);
+  res.cookie('userId', user.id, {
+    signed: true
+  });
   res.redirect('/users');
 
 }
