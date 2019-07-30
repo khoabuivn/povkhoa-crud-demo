@@ -14,16 +14,20 @@ block content
   table.table
     thead
       tr
+        th(scope='col') Avatar
         th(scope='col') Name
         th(scope='col') Phone
         th(scope='col') Actions
     tbody
-      each user in users
-        tr
-          th(scope='row')= user.name
-          td= user.phone
-          td
-            a(href='/users/' + user.id) View
+      if users
+        each user in users
+          tr
+            th(scope='row')
+              img(src= user.avatar, width='32px')
+            td= user.name
+            td= user.phone
+            td
+              a(href='/users/' + user.id) View
 
 
 

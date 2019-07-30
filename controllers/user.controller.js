@@ -32,6 +32,7 @@ module.exports.getUser = function(req, res) {
 module.exports.postCreate = function(req, res) {
   /*console.log(req.body);*/
   req.body.id = shortid.generate();
+  req.body.avatar = req.file.path.slice(7);
   db.get('users').push(req.body).write();
   // console.log(res.locals);
   res.redirect('/users');
