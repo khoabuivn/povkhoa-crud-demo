@@ -629,6 +629,23 @@
         "1ae81b41-024a-41cf-ad96-bd6944f7785b": 2,
         "6d87ca9f-35d9-4f15-977e-a0d41d1aa500": 1
       }
+    },
+    {
+      "id": "HxiMyg_H9"
+    },
+    {
+      "id": "QXR0wvCdh"
+    },
+    {
+      "id": "EdMxhr4--"
+    }
+  ],
+  "transfers": [
+    {
+      "id": "yd_dqg7no",
+      "accountId": "customer001",
+      "amount": 234234,
+      "userId": "1blnkEb1D"
     }
   ]
 }
